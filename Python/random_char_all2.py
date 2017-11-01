@@ -18,14 +18,16 @@ def randlist(r, done, used):
 def main():
 	used = [0] * 94
 	done = False
-	while done == False:	
-		for i in range(len(used)):
-			sum = 0
-			r = randint(0,93)
+	while done == False:
+		sum = 0
+		r = randint(0,93)
+		if used[r] == 0:
 			c, done = randlist(r, done, used)
-			#print(len(used))
-			sum = sum + used[i]
-			if sum == 94:
-				done = True
-		print(c, end=" ")
+			for i in range(len(used)):
+				#print(len(used))
+				sum = sum + used[i]
+				if sum == 94:
+					done = True
+			print(c, end=" ")
+	print()
 main()
