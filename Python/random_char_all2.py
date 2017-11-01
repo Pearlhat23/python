@@ -16,22 +16,13 @@ def randlist(r, done, used):
 	return alpha[r], done
 	
 def main():
-	used = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0]
+	used = [0] * 94
 	done = False
-	while done == False:
-		sum = 0
-		r = randint(0,93)
-		c, done = randlist(r, done, used)
+	while done == False:	
 		for i in range(len(used)):
+			sum = 0
+			r = randint(0,93)
+			c, done = randlist(r, done, used)
 			#print(len(used))
 			sum = sum + used[i]
 			if sum == 94:
